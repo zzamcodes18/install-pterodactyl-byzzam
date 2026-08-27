@@ -230,7 +230,7 @@ install_pteroq() {
 }
 
 install_whatsapp_bot() {
-  output "Installing WhatsApp Bot service.."
+  output "Installing WhatsApp Bot services (Notification Bot & Gateway Bot)..."
 
   if ! command -v node >/dev/null 2>&1; then
     output "Installing Node.js 20.x..."
@@ -249,17 +249,30 @@ install_whatsapp_bot() {
     npm install -g pm2
   fi
 
+  # Install & start notification bot (Port 3001)
   if [ -d "/var/www/pterodactyl/whatsapp-bot" ]; then
+    output "Setting up WhatsApp Notification Bot (Port 3001)..."
     cd /var/www/pterodactyl/whatsapp-bot
     npm install --omit=dev || npm install || true
     pm2 delete pterodactyl-wa-bot >/dev/null 2>&1 || true
     pm2 start index.js --name "pterodactyl-wa-bot" || true
-    pm2 save || true
-    pm2 startup || true
     cd /var/www/pterodactyl
   fi
 
-  success "Installed WhatsApp Bot service!"
+  # Install & start gateway bot (Port 3002)
+  if [ -d "/var/www/pterodactyl/whatsapp-gateway-bot" ]; then
+    output "Setting up WhatsApp Gateway Bot (Port 3002)..."
+    cd /var/www/pterodactyl/whatsapp-gateway-bot
+    npm install --omit=dev || npm install || true
+    pm2 delete pterodactyl-wa-gateway-bot >/dev/null 2>&1 || true
+    pm2 start index.js --name "pterodactyl-wa-gateway-bot" || true
+    cd /var/www/pterodactyl
+  fi
+
+  pm2 save || true
+  pm2 startup || true
+
+  success "Installed WhatsApp Bot services!"
 }
 
 # -------- OS specific install functions ------- #
