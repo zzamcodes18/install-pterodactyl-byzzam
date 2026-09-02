@@ -119,7 +119,7 @@ systemctl restart wings
 ## 📜 Lisensi & Kredit
 
 - **Project Core**: Dikembangkan berbasis `pterodactyl-installer` oleh **Vilhelm Prytz** dan para kontributor open-source.
-- **Custom Enhancements & Maintainer**: Dimodifikasi & Dikembangkan oleh **zzamcode** ([@muhammadtsaqf](https://github.com/muhammadtsaqf)).
+- **Custom Enhancements & Maintainer**: Dimodifikasi & Dikembangkan oleh **zzamcode** ([@zzamcodes18](https://github.com/zzamcodes18)).
 - **Lisensi**: Distributed under the [GNU General Public License v3.0](LICENSE).
 
 <div align="center">

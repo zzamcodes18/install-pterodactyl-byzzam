@@ -22,16 +22,16 @@ set -e
 #   You should have received a copy of the GNU General Public License                #
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.           #
 #                                                                                    #
-# https://github.com/muhammadtsaqf/ptero-install-zzamcode/blob/main/LICENSE          #
+# https://github.com/zzamcodes18/install-pterodactyl-byzzam/blob/main/LICENSE          #
 #                                                                                    #
 # This script is not associated with the official Pterodactyl Project.               #
-# https://github.com/muhammadtsaqf/ptero-install-zzamcode                            #
+# https://github.com/zzamcodes18/install-pterodactyl-byzzam                            #
 #                                                                                    #
 ######################################################################################
 
 export GITHUB_SOURCE="main"
 export SCRIPT_RELEASE="v1.3.0"
-export GITHUB_BASE_URL="https://raw.githubusercontent.com/muhammadtsaqf/ptero-install-zzamcode"
+export GITHUB_BASE_URL="https://raw.githubusercontent.com/zzamcodes18/install-pterodactyl-byzzam"
 
 LOG_PATH="/var/log/pterodactyl-installer.log"
 

@@ -49,10 +49,10 @@ export ARCH=""
 export SUPPORTED=false
 
 # download URLs
-export PANEL_DL_URL="https://raw.githubusercontent.com/muhammadtsaqf/ptero-install-zzamcode/main/panel.tar.gz"
+export PANEL_DL_URL="https://raw.githubusercontent.com/zzamcodes18/install-pterodactyl-byzzam/main/panel.tar.gz"
 export WINGS_DL_BASE_URL="https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_"
 export MARIADB_URL="https://downloads.mariadb.com/MariaDB/mariadb_repo_setup"
-export GITHUB_BASE_URL=${GITHUB_BASE_URL:-"https://raw.githubusercontent.com/muhammadtsaqf/ptero-install-zzamcode"}
+export GITHUB_BASE_URL=${GITHUB_BASE_URL:-"https://raw.githubusercontent.com/zzamcodes18/install-pterodactyl-byzzam"}
 export GITHUB_URL="$GITHUB_BASE_URL/$GITHUB_SOURCE"
 
 # Colors
