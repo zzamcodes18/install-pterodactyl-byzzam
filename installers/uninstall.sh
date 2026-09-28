@@ -93,6 +93,8 @@ rm_services() {
     output "Stopping and removing WhatsApp Bot from PM2..."
     pm2 stop pterodactyl-wa-bot >/dev/null 2>&1 || true
     pm2 delete pterodactyl-wa-bot >/dev/null 2>&1 || true
+    pm2 stop pterodactyl-wa-gateway-bot >/dev/null 2>&1 || true
+    pm2 delete pterodactyl-wa-gateway-bot >/dev/null 2>&1 || true
     pm2 save >/dev/null 2>&1 || true
   fi
   

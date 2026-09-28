@@ -227,8 +227,6 @@ while [ "$done" == false ]; do
     "$MSG_OPT_UPDATE"
     "$MSG_OPT_UNINSTALL"
     "$MSG_OPT_PHPMYADMIN"
-    "$MSG_OPT_MONGODB"
-    "$MSG_OPT_UNINSTALL_MONGODB"
   )
 
   actions=(
@@ -237,8 +235,6 @@ while [ "$done" == false ]; do
     "update"
     "uninstall"
     "phpmyadmin"
-    "mongodb"
-    "uninstall_mongodb"
   )
 
   output "$MSG_WHAT_TO_DO"

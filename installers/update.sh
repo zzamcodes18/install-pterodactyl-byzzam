@@ -145,14 +145,11 @@ perform_update() {
     cd /var/www/pterodactyl
   fi
 
-  # Update & restart gateway bot (Port 3002)
-  if [ -d "/var/www/pterodactyl/whatsapp-gateway-bot" ]; then
-    output "Memperbarui WhatsApp Gateway Bot (Port 3002)..."
-    cd /var/www/pterodactyl/whatsapp-gateway-bot
-    npm install --omit=dev || npm install || true
-    pm2 restart pterodactyl-wa-gateway-bot || pm2 start index.js --name "pterodactyl-wa-gateway-bot" || true
-    cd /var/www/pterodactyl
+  # Clean up legacy WhatsApp Gateway Bot if running
+  if command -v pm2 >/dev/null 2>&1; then
+    pm2 delete pterodactyl-wa-gateway-bot >/dev/null 2>&1 || true
   fi
+  rm -rf /var/www/pterodactyl/whatsapp-gateway-bot >/dev/null 2>&1 || true
 
   pm2 save || true
   pm2 startup || true
